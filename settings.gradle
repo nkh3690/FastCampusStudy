@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "FastCampusSutdy"
 include ':app'
 include ':counter'
+include ':unitconverter'
