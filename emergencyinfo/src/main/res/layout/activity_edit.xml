@@ -41,8 +41,8 @@
         style="@style/Value"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="0000-00-00"
         android:paddingEnd="8dp"
+        android:text="0000-00-00"
         app:layout_constraintBaseline_toBaselineOf="@id/birthdateTextView"
         app:layout_constraintEnd_toStartOf="@+id/birthdayImageView"
         app:layout_constraintStart_toStartOf="@id/guideLine" />
@@ -92,12 +92,10 @@
 
     <RadioGroup
         android:id="@+id/bloodTypeRadioGroup"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:gravity="end"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@id/bloodTypeTextView"
-        app:layout_constraintEnd_toStartOf="@id/bloodTypeSpinner"
         app:layout_constraintStart_toStartOf="@id/guideLine"
         app:layout_constraintTop_toTopOf="@id/bloodTypeTextView">
 
@@ -118,11 +116,12 @@
 
     <Spinner
         android:id="@+id/bloodTypeSpinner"
-        android:layout_width="70dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/bloodTypeTextView"
         app:layout_constraintEnd_toEndOf="@id/nameEditText"
-        app:layout_constraintTop_toTopOf="@id/bloodTypeTextView"
-        app:layout_constraintBottom_toBottomOf="@id/bloodTypeTextView"/>
+        app:layout_constraintStart_toEndOf="@+id/bloodTypeRadioGroup"
+        app:layout_constraintTop_toTopOf="@id/bloodTypeTextView" />
 
     <EditText
         android:id="@+id/emergencyContactEditText"
@@ -142,9 +141,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="주의사항"
-        app:layout_constraintTop_toBottomOf="@id/warningCheckBox"
         app:layout_constraintEnd_toEndOf="@id/nameEditText"
-        app:layout_constraintStart_toStartOf="@id/guideLine"/>
+        app:layout_constraintStart_toStartOf="@id/guideLine"
+        app:layout_constraintTop_toBottomOf="@id/warningCheckBox" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/goInputAcitivityButton"
@@ -160,11 +159,18 @@
         android:id="@+id/warningCheckBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="주의사항 노출"
         android:gravity="end|center_vertical"
+        android:text="주의사항 노출"
         app:layout_constraintBottom_toBottomOf="@+id/warningTextView"
         app:layout_constraintEnd_toEndOf="@+id/nameEditText"
         app:layout_constraintStart_toStartOf="@id/guideLine"
         app:layout_constraintTop_toTopOf="@+id/warningTextView" />
+
+    <androidx.constraintlayout.helper.widget.Layer
+        android:id="@+id/birthdateLayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="birthdateValueTextView, birthdayImageView"
+        tools:ignore="MissingConstraints"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
